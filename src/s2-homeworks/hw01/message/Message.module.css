@@ -4,7 +4,7 @@
   margin-bottom: 24px;
 }
 
-.imageAndText {  
+.imageAndText {
   line-height: 1.2;
 }
 
@@ -18,14 +18,28 @@
   display: inline-block;
   background-color: #0066CC;
   color: #FFFFFF;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 8px;
   margin: 0 10px 0 auto;
   min-width: 100px;
   max-width: 520px;
   width: fit-content;
+  position: relative;
 }
 
-.text:after {}
+.text::before {
+  content: '';
+  position: absolute;
+  border: 6px solid #0066CC;
+  bottom: 0;
+}
+
+.text:after {
+  content: '';
+  position: absolute;
+  border: 6px solid white;
+  bottom: 0;
+  border-radius: 0 0 0 100%;
+}
 
 .name {
   font-size: 18px;
@@ -36,8 +50,6 @@
 .messageText {
   font-size: 16px;
   font-weight: 400;
-  /* display: inline-block; */
-  /* width: 100%;   */
   white-space: pre-line;
   padding: 0 13px 8px 13px;
 }

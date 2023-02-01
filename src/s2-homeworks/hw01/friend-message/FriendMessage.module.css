@@ -19,13 +19,29 @@
   background-color: #F5F7FB;
   color: #000000;
   width: 527px;
-  border-radius: 8px;
+  border-radius: 8px 8px 8px 0;
   min-width: 100px;
   max-width: 600px;
   width: fit-content;
+  position: relative;
 }
 
-.friendText:after {}
+.friendText::before {
+  content: '';
+  position: absolute;
+  border: 6px solid #F5F7FB;
+  bottom: 0;
+  left: -12px;  
+}
+
+.friendText:after {
+  content: '';
+  position: absolute;
+  border: 6px solid white;
+  bottom: 0;
+  border-radius: 0 0 100% 0;
+  left: -12px;
+}
 
 .friendName {
   font-size: 18px;

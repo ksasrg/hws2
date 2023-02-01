@@ -14,9 +14,11 @@
   font-size: 14px;
   line-height: 17px;
   background-color: #F5F7FB;
-  padding: 10px;
+  padding: 10px 15px;
   overflow: hidden;
   resize: none;
+  border: 1px solid #D9D9D9;
+  outline: none;
 }
 
 .button {
