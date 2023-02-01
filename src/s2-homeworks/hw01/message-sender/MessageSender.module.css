@@ -1,0 +1,30 @@
+.sendForm {}
+
+.textarea {
+  width: 976px;
+  height: 40px;
+  border-radius: 20px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+
+}
+
+.button {
+  width: 120px;
+  height: 40px;
+  background: #0066CC;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+
+}
+
+.button:hover {}
+
+.button:active {}
