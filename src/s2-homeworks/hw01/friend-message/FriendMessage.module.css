@@ -19,7 +19,7 @@
   background-color: #F5F7FB;
   color: #000000;
   width: 527px;
-  border-radius: 8px 8px 8px 0;
+  border-radius: 10px 10px 10px 0;
   min-width: 100px;
   max-width: 600px;
   width: fit-content;
@@ -53,6 +53,7 @@
   font-size: 16px;
   font-weight: 400;
   white-space: pre-line;
+  word-wrap: break-word;
   padding: 0 13px 8px 13px;
 }
 

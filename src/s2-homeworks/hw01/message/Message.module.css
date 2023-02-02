@@ -18,7 +18,7 @@
   display: inline-block;
   background-color: #0066CC;
   color: #FFFFFF;
-  border-radius: 8px 8px 0 8px;
+  border-radius: 10px 10px 0 10px;
   margin: 0 10px 0 auto;
   min-width: 100px;
   max-width: 520px;
@@ -51,7 +51,9 @@
   font-size: 16px;
   font-weight: 400;
   white-space: pre-line;
+  word-wrap: break-word;
   padding: 0 13px 8px 13px;
+  text-align: left;
 }
 
 .time {
