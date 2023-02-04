@@ -138,7 +138,7 @@ table {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 .App {
-	font-family: 'Montserrat';
+	font-family: 'Montserrat', serif;
 	--header_height: 60px;
 	padding: 0 70px;
 }
