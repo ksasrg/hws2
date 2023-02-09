@@ -141,6 +141,8 @@ table {
 	font-family: 'Montserrat', serif;
 	--header_height: 60px;
 	padding: 0 70px;
+	width: 100vw;
+	margin-bottom: 50px;
 }
 
 .hw {}
