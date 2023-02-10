@@ -32,7 +32,7 @@ const defaultAffairs: AffairType[] = [
     { _id: 3, name: 'games', priority: 'low' },
     { _id: 4, name: 'work', priority: 'high' },
     { _id: 5, name: 'html & css', priority: 'middle' },
-    { _id: 6, name: 'walk', priority: 'high' },
+    { _id: 6, name: 'make HW2', priority: 'high' },
 ]
 
 // pure helper functions
@@ -56,7 +56,7 @@ function HW2() {
     }
 
     return (
-        <div id={'hw2'}>
+        <div id={'hw2'} className={s2.hw2}>
             <div className={s2.hwTitle}>Homework #2</div>
             <div className={s2.hw}>
                 <Affairs
