@@ -17,6 +17,8 @@ import GreetingContainer from './GreetingContainer'
 * 11 - сделать стили в соответствии с дизайном
 * */
 
+// test
+
 // types
 export type UserType = {
   _id: string
