@@ -17,47 +17,45 @@ import GreetingContainer from './GreetingContainer'
 * 11 - сделать стили в соответствии с дизайном
 * */
 
-// test
-
 // types
 export type UserType = {
-  _id: string
-  name: string
+    _id: string
+    name: string
 }
 
 export const pureAddUserCallback =
-  (
-    name: string,
-    setUsers: (users: UserType[]) => void,
-    users: UserType[]
-  ) => { 
-    const user: UserType = {
-      _id: v1(), 
-      name: name
+    (
+        name: string,
+        setUsers: (users: UserType[]) => void,
+        users: UserType[]
+    ) => {
+        const user: UserType = {
+            _id: v1(),
+            name: name
+        }
+        setUsers([...users, user])
     }
-    setUsers([...users, user])
-  }
 
 const HW3 = () => {
-  const [users, setUsers] = useState<UserType[]>([])
+    const [users, setUsers] = useState<UserType[]>([])
 
-  const addUserCallback = (name: string) => {
-    pureAddUserCallback(name, setUsers, users)
-  }
+    const addUserCallback = (name: string) => {
+        pureAddUserCallback(name, setUsers, users)
+    }
 
-  return (
-    <div id={'hw3'}>
-      <div className={s2.hwTitle}>Homework #3</div>
-      {/*для автоматической проверки дз (не менять)*/}
+    return (
+        <div id={'hw3'}>
+            <div className={s2.hwTitle}>Homework #3</div>
+            {/*для автоматической проверки дз (не менять)*/}
 
-      <div className={s2.hw}>
-        <GreetingContainer
-          users={users}
-          addUserCallback={addUserCallback}
-        />
-      </div>
-    </div>
-  )
+            <div className={s2.hw}>
+                <GreetingContainer
+                    users={users}
+                    addUserCallback={addUserCallback}
+                />
+            </div>
+        </div>
+    )
 }
 
 export default HW3
