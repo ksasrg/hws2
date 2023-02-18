@@ -1,4 +1,7 @@
-.greetingForm {}
+.greetingForm {
+
+  min-height: 150px;
+}
 
 .inputAndButtonContainer {
   display: flex;
