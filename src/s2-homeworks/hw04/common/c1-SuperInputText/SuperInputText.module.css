@@ -16,11 +16,13 @@
 
 .inputWrapper {}
 
-.superInput {}
+.superInput {
+
+}
 
 .errorInput {
     border: 1px solid #CC1439;
-    
+
 }
 
 .errorInput:focus {}
