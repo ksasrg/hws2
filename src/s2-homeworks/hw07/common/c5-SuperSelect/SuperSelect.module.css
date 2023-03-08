@@ -1,9 +1,10 @@
 .select {
+    margin-right: 127px;
+    width: 165px;
+    height: 24px;
 }
 
-.select:focus {
-}
+.select:focus {}
 
 
-.option:hover {
-}
+.option:hover {}
