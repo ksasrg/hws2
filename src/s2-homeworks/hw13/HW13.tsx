@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW13.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
@@ -20,6 +20,8 @@ const HW13 = () => {
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
+    const LOADING = '...loading'
+
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
@@ -29,19 +31,35 @@ const HW13 = () => {
         setCode('')
         setImage('')
         setText('')
-        setInfo('...loading')
+        setInfo(LOADING)
 
         axios
-            .post(url, {success: x})
+            .post(url, { success: x })
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                // дописать
-
+                setText(res.data.errorText)
+                setInfo(res.data.info)
             })
             .catch((e) => {
-                // дописать
 
+                if (e.response.status) {
+                    setCode(`Код ${e.response.status}!`)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                } else {
+                    setCode('Error!')
+                    setText(e.message)
+                    setInfo(e.name)
+                }
+
+                if (e.response.status === 400) {
+                    setImage(error400)
+                } else if (e.response.status === 500) {
+                    setImage(error500)
+                } else {
+                    setImage(errorUnknown)
+                }
             })
     }
 
@@ -55,7 +73,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={info === LOADING}
 
                     >
                         Send true
@@ -64,7 +82,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={info === LOADING}
 
                     >
                         Send false
@@ -73,7 +91,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={info === LOADING}
 
                     >
                         Send undefined
@@ -82,7 +100,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        // дописать
+                        disabled={info === LOADING}
 
                     >
                         Send null
@@ -91,7 +109,7 @@ const HW13 = () => {
 
                 <div className={s.responseContainer}>
                     <div className={s.imageContainer}>
-                        {image && <img src={image} className={s.image} alt="status"/>}
+                        {image && <img src={image} className={s.image} alt="status" />}
                     </div>
 
                     <div className={s.textContainer}>
