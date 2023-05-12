@@ -5,6 +5,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import { useSearchParams } from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import { Loader } from '../hw10/Loader'
 
 /*
 * 1 - дописать SuperPagination
@@ -72,12 +73,18 @@ const HW15 = () => {
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
-        setPage(newPage)
-        setCount(newCount)
+        let page = 1
 
-        sendQuery({ sort: params.sort, count: newCount, page: newPage })
+        if (count === newCount) {
+            page = newPage
+        } else {
+            setCount(newCount)
+        }
+
+        setPage(page)
+        sendQuery({ sort: params.sort, count: newCount, page: page })
         setSearchParams(prev => {
-            prev.set('page', newPage.toString())
+            prev.set('page', page.toString())
             prev.set('count', newCount.toString())
             return prev
         })
@@ -106,7 +113,7 @@ const HW15 = () => {
         sendQuery({ page: Number(params.page) || 1, count: Number(params.count) || 4 })
         setPage(+params.page || 1)
         setCount(+params.count || 4)
-        setSort(params.sort)        
+        setSort(params.sort)
     }, [])
 
     const mappedTechs = techs.map(t => (
@@ -122,11 +129,12 @@ const HW15 = () => {
     ))
 
     return (
-        <div id={'hw15'}>
+        <div id={'hw15'} className={s.hw15}>
             <div className={s2.hwTitle}>Homework #15</div>
 
-            <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+            <div className={s2.hw + ' ' + s.hw}>
+                {idLoading && <div id={'hw15-loading'} className={s.loading}><Loader /></div>}
+                {/* <div id={'hw15-loading'} className={s.loading}><Loader /></div> */}
 
                 <SuperPagination
                     page={page}

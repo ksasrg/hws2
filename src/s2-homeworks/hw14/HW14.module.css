@@ -1,7 +1,13 @@
 .tech {
-
+font-size: 16px;
+line-height: 24px;
 }
 
 .loading {
+text-align: right;
+}
 
+.hw14{
+    min-height: 300px;
+    max-width: 370px;
 }

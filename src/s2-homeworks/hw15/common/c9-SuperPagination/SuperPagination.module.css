@@ -1,9 +1,12 @@
 .pagination {
     display: flex;
+    margin: 36px 0;
+    align-items: center;
 }
 
 .text1 {
-
+text-transform: capitalize;
+margin: 0 10px;
 }
 
 .text2 {
